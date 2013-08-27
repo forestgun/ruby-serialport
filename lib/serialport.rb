@@ -1,9 +1,9 @@
-require 'oscheck'
+require_relative 'oscheck'
 
 if OsCheck.is_osx?
   require 'serialport.bundle'
 else 
-  require 'serialport.so'
+  require_relative '../ext/native/serialport.so'
 end
 
 class SerialPort
